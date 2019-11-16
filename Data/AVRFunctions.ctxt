@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=adr
+comment0.target=AVRFunctions(java.lang.String)
+comment1.params=
+comment1.target=void\ setAVRON()
+comment10.params=
+comment10.target=void\ connect()
+comment2.params=
+comment2.target=void\ setAVROFF()
+comment3.params=iVol
+comment3.target=void\ setVol(int)
+comment4.params=strSource
+comment4.target=void\ setSource(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ getSource()
+comment6.params=
+comment6.target=int\ getVolume()
+comment7.params=
+comment7.target=java.lang.Boolean\ checkAVRPowerOn()
+comment8.params=
+comment8.target=java.lang.Boolean\ checkAVRPowerSTBY()
+comment9.params=
+comment9.target=void\ waitAfterPowerOn()
+numComments=11

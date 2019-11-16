@@ -1,0 +1,87 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+
+public class GUI extends JFrame implements ActionListener, ItemListener{
+    //Deklarationen
+    //Buttons
+    private static JButton btnPowerToggle;
+    private static String strPowerToggle = "on";
+    private static String strPowerToggleTemp = "off";
+    //Beschriftung
+    public static JTextField tfStatus = null; 
+    
+    /**
+     * Konstruktor
+     */
+    public GUI(){
+        //Layout
+        setTitle("Denon Remote");
+        setSize(250,500);
+        setLayout(null);
+        //setBackground(Color.LIGHT_GRAY);
+        getContentPane().setBackground(new Color(255,251,242));
+        setLocation(100,100);
+        setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        //Buttons
+        btnPowerToggle = new JButton(strPowerToggle);
+        btnPowerToggle.setBounds(50,60,50,25);
+        btnPowerToggle.addActionListener(this);
+        add(btnPowerToggle);
+        
+        //Textfelder
+        //Status
+        tfStatus = new JTextField("Standby");
+        tfStatus.setBounds(5,5,235,50);
+        tfStatus.setFont(new Font("Arial", Font.PLAIN, 36));
+        tfStatus.setHorizontalAlignment(JTextField.CENTER);
+        tfStatus.setForeground(Color.RED); 
+        tfStatus.setEditable(false);
+        add(tfStatus);
+        
+        
+        setVisible(true);
+    }
+    
+    /**
+     * ActionListener
+     */
+    public void actionPerformed(ActionEvent e){
+        // Power Toggle of the AVR
+        if(e.getSource() == btnPowerToggle){
+            switch(strPowerToggle){
+                case "on": stateOn();
+                //befehl für einschalten
+                break;
+                case "off": stateOff(); 
+                //befehl für ausschalten
+                break;
+                default: strPowerToggle = "on"; 
+                //befehl für ausschalten
+                break;
+            }
+            btnPowerToggle.setText(strPowerToggle);
+        }
+    }
+    
+    public void stateOn(){
+        strPowerToggle = "off";
+        AVRFunctions.switchonAVR();
+        
+    }
+    
+    public void stateOff(){
+        strPowerToggle = "on";
+        AVRFunctions.switchoffAVR();
+    }
+    
+     /**
+     * ItemListener
+     */
+    public void itemStateChanged(ItemEvent e){
+    }
+    
+}

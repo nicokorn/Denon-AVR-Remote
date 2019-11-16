@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.params=
+comment0.target=DisplayDriver()
+comment0.text=\r\n\ Konstruktor\r\n
+comment1.params=strPower
+comment1.target=void\ setDisplayPower(java.lang.String)
+comment2.params=iVolumeMethod
+comment2.target=void\ setDisplayVolume(int)
+comment3.params=strSource
+comment3.target=void\ setDisplaySource(java.lang.String)
+comment4.params=arrData
+comment4.target=void\ setDisplayStatus(java.lang.String[])
+comment5.params=
+comment5.target=double\ getDisplayVolume()
+numComments=6
